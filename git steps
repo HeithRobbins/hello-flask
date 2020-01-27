@@ -1,0 +1,7 @@
+how to star a new git rep 
+git init
+
+add all items in the repo
+git add . 
+
+commit your  change to be saved 
