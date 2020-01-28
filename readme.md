@@ -1,18 +1,19 @@
 # Flask App
-
-There following project was built dring my course with bottega. It has full CRUD functionality.
-
-
-### create database
-if you need to create a database. hop into a python repl and run the following cammands
-when you're done you should have an app.sqlite file. that file will be your database
-
-from app import dp 
-db.create_all()
-
-get put post patch delete
-
-
+The following project was built during my course with Bottega.  It has full CRUD functionality.
+> Dependencies Documentation
+- FLASK
+  - http://flask.palletsprojects.com/en/1.1.x/
+- FLASK-MARSHMALLOW
+  - https://flask-marshmallow.readthedocs.io/en/latest/
+- FLASK-SQLALCHEMY
+  - https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+- MARSHMALLOW-SQLALCHEMY
+  - https://marshmallow-sqlalchemy.readthedocs.io/en/latest/
+## Commands to follow after downloading
+- Install all the dependencies
+```
+$ pipenv install
+```
 ### Create Database
 - If you need to create a database.  Hop into a python repl and run the following commands.
 - When you're done you should have an app.sqlite file.  That file will be your database.
@@ -20,21 +21,59 @@ get put post patch delete
 >>> from app import db
 >>> db.create_all()
 ```
-
-PIPENV STEPS
-How to make a pip environment
-- Traverse to the folder you want to make an environment
-- In your terminal run this command
-$ pipenv --three
-Open vscode
-$ code .
-Check your pip file to make sure it has python 3
-Go back to your terminal and install your dependencies
-$ pipenv install dependenci_name
-To enter your pip environment after installing all dependencies run the following command
+### Starting your server
+- Enter a pipenv shell first
+```
 $ pipenv shell
-how to exit a pipshell
+```
+- Start the server
+```
+$ python app.py
+```
+### How to run queries
+- Post a guide
+```
+Route: localhost:5000/guide
+Method: POST
+Body: {
+    "title": "Your cool title",
+    "content": "Your amazing content"
+}
+Content-type: JSON
+```
+- Get all guides
+```
+Route: localhost:5000/guides
+Method: GET
+```
+- Get a single guide
+```
+- The id will be dynamic.  The id that you input will return the guide that you want to collect from the database.
+Route: localhost:5000/guide/id
+Method: GET
+```
+- PUT a single guide
+```
+- The id will be dynamic.  The id that you input will be the guide that you want to edit from the database.
+Route: localhost:5000/guide/id
+Method: PUT
+Body: {
+    "title": "Your Updated Title",
+    "content": "Your Updated Content"
+}
+Content-type: JSON
+```
+- DELETE a single guide
+```
+- The id will be dynamic.  The id that you input will be the guide that you want to delete from the database.
+Route: localhost:5000/guide/id
+Method: DELETE
+```
+### Exit your pipenv shell
+- how to exit a pipshell
+```
 $ exit
+```
 
 GIT STEPS
 how to start a new git rep
@@ -51,6 +90,8 @@ $ git push
 
 
 references:
+Dependencies Documentation
+```
 https://flask-marshmallow.readthedocs.io/en/latest/
 https://flask-sqlalchemy.palletsprojects.com/en/2.x/
 https://marshmallow-sqlalchemy.readthedocs.io/en/latest/
